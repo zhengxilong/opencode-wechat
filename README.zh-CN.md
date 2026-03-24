@@ -1,6 +1,6 @@
 # opencode-wechat
 
-[English](./README.md) | [简体中文](./README.zh-CN.md)
+[English](./README.en.md) | [简体中文](./README.md)
 
 `opencode-wechat` 是一个将微信消息桥接到 OpenCode 的通道服务，让你可以直接通过手机微信和 OpenCode 交互。
 

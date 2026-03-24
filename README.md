@@ -1,72 +1,72 @@
 # opencode-wechat
 
-[English](./README.md) | [简体中文](./README.zh-CN.md)
+[English](./README.en.md) | [简体中文](./README.md)
 
-`opencode-wechat` is a bridge that connects WeChat messages to OpenCode, so you can talk to OpenCode directly from your phone through WeChat.
+`opencode-wechat` 是一个将微信消息桥接到 OpenCode 的通道服务，让你可以直接通过手机微信和 OpenCode 交互。
 
-It is designed for individual developers and small teams who want a lightweight mobile entry point for OpenCode without adding a web console or a full enterprise messaging integration.
+它主要面向个人开发者和小团队，目标是在不引入额外 Web 控制台或复杂企业 IM 集成的前提下，为 OpenCode 提供一个轻量、直接、可本地部署的移动端入口。
 
-## Why This Project Exists
+## 为什么要做这个项目
 
-OpenCode is powerful on desktop and in the terminal, but there are many moments when you are away from your computer and still want to:
+OpenCode 在桌面端和终端里很好用，但很多时候你并不在电脑前，仍然希望能够：
 
-- ask OpenCode to inspect a project
-- continue a multi-turn coding conversation
-- trigger a small task
-- confirm a risky action
-- check the latest result from your phone
+- 让 OpenCode 查看当前项目
+- 继续一轮未完成的多轮对话
+- 发起一个轻量任务
+- 确认一个高风险操作
+- 通过手机查看最新执行结果
 
-`opencode-wechat` turns WeChat into a practical control channel for OpenCode.
+`opencode-wechat` 的目标，就是把微信变成一个可实际使用的 OpenCode 控制通道。
 
-## Core Features
+## 核心能力
 
-- WeChat QR code login
-- WeChat text message receive and send
-- WeChat conversation to OpenCode session mapping
-- Multi-turn conversation support
-- Project directory binding
-- High-risk action confirmation flow
-- Local file-based runtime state
-- Local deployment with configurable paths
+- 微信二维码登录
+- 微信文本消息接收与发送
+- 微信会话映射到 OpenCode Session
+- 支持多轮对话
+- 支持项目目录绑定
+- 支持高风险操作确认流程
+- 支持本地文件方式保存运行状态
+- 支持本地部署和自定义路径配置
 
-## Typical Use Cases
+## 典型使用场景
 
-- Send instructions to OpenCode while commuting or traveling
-- Check project status without opening a terminal
-- Continue an existing coding task through WeChat
-- Let a small team validate WeChat as a lightweight AI coding entry point
+- 通勤、外出、开会时通过手机给 OpenCode 发指令
+- 不打开终端也能查看项目状态
+- 在微信里继续一个已有的编码任务
+- 让小团队快速验证“微信作为 AI Coding 入口”的可行性
 
-## Project Status
+## 当前状态
 
-This project is currently in an early implementation stage.
+这个项目目前处于早期实现阶段。
 
-The bridge flow has already been validated in a local integration environment:
+当前桥接链路已经在本地联调环境中完成验证：
 
-- WeChat can send messages to the bridge
-- the bridge can call OpenCode
-- OpenCode results can be returned to WeChat
+- 微信可以向 Bridge 发送消息
+- Bridge 可以调用 OpenCode
+- OpenCode 的结果可以回传到微信
 
-There is still work to do before a polished public release, especially around:
+在正式作为独立开源项目发布前，仍然还有一些工作需要继续补齐，主要包括：
 
-- automated tests
-- packaging as a standalone binary
-- configuration hardening
-- documentation cleanup
-- protocol stability and operational guidance
+- 自动化测试
+- 独立二进制打包
+- 配置健壮性增强
+- 文档整理和示例完善
+- 协议稳定性和运维说明
 
-## Architecture Overview
+## 架构概览
 
-At a high level, the bridge works like this:
+从高层看，这个桥接流程是这样的：
 
-1. A message arrives from WeChat.
-2. The bridge parses the message and resolves the target project.
-3. The bridge creates or reuses an OpenCode session.
-4. The bridge sends the prompt to OpenCode.
-5. The result is sent back to WeChat.
+1. 微信消息进入 Bridge。
+2. Bridge 解析消息并确定目标项目。
+3. Bridge 创建或复用一个 OpenCode Session。
+4. Bridge 将消息作为 Prompt 发送给 OpenCode。
+5. 执行结果回传到微信。
 
-## Quick Start
+## 快速开始
 
-The exact public setup steps will be refined as the repository is split out, but the intended quick-start flow is:
+独立仓库拆出后，目标中的最小启动流程会是下面这样：
 
 ```bash
 git clone <your-repo-url>
@@ -77,7 +77,7 @@ bun run doctor
 bun run start
 ```
 
-If you want to verify the packaged CLI flow instead of running from source:
+如果你想验证“构建产物启动”而不是源码启动，也可以使用下面这组命令：
 
 ```bash
 bun run build
@@ -85,15 +85,15 @@ bun run build
 ./dist/opencode-wechat start
 ```
 
-Then:
+然后：
 
-1. scan the login QR code with your phone
-2. send a message from WeChat
-3. receive the OpenCode response in the same chat
+1. 用手机扫描登录二维码
+2. 在微信中发送消息
+3. 在同一个聊天窗口中接收 OpenCode 返回结果
 
-## Example Configuration
+## 配置示例
 
-This is an example of the configuration shape the project is expected to support:
+下面是一个预期支持的配置结构示例：
 
 ```json
 {
@@ -114,9 +114,9 @@ This is an example of the configuration shape the project is expected to support
 }
 ```
 
-## CLI Commands
+## CLI 命令
 
-Planned or implemented commands include:
+计划支持或已经实现的命令包括：
 
 - `start`
 - `login`
@@ -126,55 +126,55 @@ Planned or implemented commands include:
 - `smoke`
 - `build`
 
-## Scope
+## 项目边界
 
-This project is intended to be:
+这个项目的定位是：
 
-- a focused WeChat bridge for OpenCode
-- easy to understand and run locally
-- useful for personal workflows and small-team experiments
+- 一个面向 OpenCode 的专用微信桥接器
+- 一个容易理解、容易本地运行的开发者工具
+- 一个适合个人工作流和小团队实验的轻量入口
 
-This project is not intended, at least in its first public versions, to be:
+这个项目在首批公开版本中，不打算定位为：
 
-- a full enterprise collaboration platform
-- a general chatbot framework
-- a replacement for OpenCode itself
-- a production-grade multi-tenant control plane
+- 完整的企业协同平台
+- 通用聊天机器人框架
+- OpenCode 本体替代品
+- 面向大规模生产环境的多租户控制平面
 
-## Security and Risk Notes
+## 安全与风险说明
 
-WeChat bridge software comes with operational and account-safety considerations.
+任何微信桥接类软件都天然带有运行稳定性、账号安全和运维风险。
 
-Before using this project, you should clearly understand:
+在使用这个项目之前，你需要充分理解：
 
-- the WeChat integration approach you are using
-- the operational stability limits of message bridges
-- the sensitivity of the projects you expose to remote chat control
-- the risk of running high-privilege actions through a messaging channel
+- 你当前采用的微信接入方式
+- 消息桥接方案的稳定性边界
+- 通过消息通道暴露项目控制能力的风险
+- 在聊天通道中执行高权限操作的安全边界
 
-Early public versions should be treated as developer tooling for controlled environments, not as a default production solution for sensitive systems.
+在项目早期公开版本中，更适合将它视为“受控环境下的开发者工具”，而不是默认用于高敏感生产环境的标准方案。
 
 ## Roadmap
 
-- improve repository structure for standalone open-source release
-- add `doctor` checks and more robust startup validation
-- add unit tests and integration tests
-- improve configuration docs and troubleshooting docs
-- package the bridge as a standalone `opencode-wechat` binary
-- define a cleaner plugin or channel adapter boundary for future expansion
+- 完善独立开源仓库结构
+- 增加 `doctor` 启动检查与诊断能力
+- 增加单元测试和集成测试
+- 完善配置文档和排障文档
+- 将 Bridge 打包为独立的 `opencode-wechat` 二进制
+- 为未来多通道扩展整理更清晰的 adapter/plugin 边界
 
-## Contributing
+## 贡献
 
-Contributions, issue reports, setup notes, and field feedback will be very helpful, especially around:
+欢迎提交 Issue、PR、使用反馈和部署经验，尤其欢迎以下方面的帮助：
 
-- installation experience
-- QR login stability
-- message routing edge cases
-- OpenCode session behavior
-- safe-operation guidelines
+- 安装体验优化
+- 二维码登录稳定性
+- 消息路由边界场景
+- OpenCode Session 行为验证
+- 安全使用建议和最佳实践
 
-See [CONTRIBUTING.md](./CONTRIBUTING.md), [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md), and [SECURITY.md](./SECURITY.md) before opening a pull request or reporting a sensitive issue.
+在提交 PR 或报告敏感问题前，建议先阅读 [CONTRIBUTING.md](./CONTRIBUTING.md)、[CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md) 和 [SECURITY.md](./SECURITY.md)。
 
 ## License
 
-This project is released under the MIT license. See [LICENSE](./LICENSE).
+本项目采用 MIT 许可证，详见 [LICENSE](./LICENSE)。
