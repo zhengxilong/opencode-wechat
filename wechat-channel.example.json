@@ -1,0 +1,33 @@
+{
+  "opencode": {
+    "command": "opencode",
+    "args": [],
+    "working_directory": "/absolute/path/to/your/workspace",
+    "base_url": ""
+  },
+  "wechat_channel": {
+    "listen_mode": "polling",
+    "state_dir": ".runtime",
+    "poll_interval_ms": 3000,
+    "startup_message": "opencode-wechat is ready.",
+    "max_reply_chars": 6000,
+    "require_approval_for_risky_actions": true
+  },
+  "projects": [
+    {
+      "id": "demo",
+      "name": "Demo Project",
+      "dir": "/absolute/path/to/your/project",
+      "aliases": ["demo", "test"]
+    }
+  ],
+  "security": {
+    "allowed_wechat_users": [],
+    "default_project_id": "demo"
+  },
+  "metrics": {
+    "enabled": false,
+    "api_base_url": "",
+    "client_id": ""
+  }
+}

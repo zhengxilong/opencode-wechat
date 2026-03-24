@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Documentation index
+    url: https://github.com/your-org/opencode-wechat/blob/main/docs/index.md
+    about: Start with the public docs before opening an issue.
