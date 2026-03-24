@@ -69,7 +69,7 @@ export async function loadSdk(): Promise<SdkModule> {
   }
 
   throw new Error(
-    `Unable to load OpenCode SDK from package import or local workspace dist. Errors: ${errors
+    `Unable to load OpenCode SDK from package import or local workspace dist. Run 'bun install' so '@opencode-ai/sdk' is installed. Errors: ${errors
       .map((item) => (item instanceof Error ? item.message : String(item)))
       .join(" | ")}`,
   )
