@@ -4,13 +4,13 @@
   "description": "A WeChat bridge for OpenCode that lets you interact with OpenCode through WeChat.",
   "type": "module",
   "license": "MIT",
-  "homepage": "https://github.com/your-org/opencode-wechat",
+  "homepage": "https://github.com/zhengxilong/opencode-wechat",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-org/opencode-wechat.git"
+    "url": "git+https://github.com/zhengxilong/opencode-wechat.git"
   },
   "bugs": {
-    "url": "https://github.com/your-org/opencode-wechat/issues"
+    "url": "https://github.com/zhengxilong/opencode-wechat/issues"
   },
   "packageManager": "bun@1.3.10",
   "bin": {

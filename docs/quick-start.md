@@ -22,7 +22,7 @@ opencode --help
 ## 2. Clone and Install
 
 ```bash
-git clone https://github.com/your-org/opencode-wechat.git
+git clone https://github.com/zhengxilong/opencode-wechat.git
 cd opencode-wechat
 bun install
 ```
